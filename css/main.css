@@ -1,0 +1,339 @@
+@font-face {
+    font-family: "Portfolio Hiragino Sans GB";
+    src: url("../fonts/Hiragino%20Sans%20GB.ttc");
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+main {
+    width: 100%;
+    padding-bottom: 56px;
+}
+
+.section-block {
+    padding-top: 44px;
+    padding-bottom: 112px;
+    margin-bottom: 0;
+}
+
+.section-block:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== Title Block ===== */
+.title-block {
+    width: min(1140px, calc(100vw - 48px));
+    margin: 46px auto 0;
+    text-align: left;
+}
+
+.title-line {
+    display: flex;
+    align-items: baseline;
+    gap: 22px;
+    color: #e21b16;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.title-num {
+    font-size: clamp(38px, 3.4vw, 52px);
+    line-height: 1;
+    font-style: italic;
+}
+
+.title-name {
+    font-size: clamp(30px, 2.8vw, 46px);
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+.title-copy {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.22em;
+    color: #111;
+}
+
+/* ===== Intro Section (UX / Web) ===== */
+.content-wrap {
+    width: min(1140px, calc(100vw - 48px));
+    margin: 0 auto;
+}
+
+.intro-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 48px;
+    align-items: start;
+}
+
+.intro-text {
+    font-size: 15px;
+    line-height: 2;
+    color: #222;
+    text-indent: 2em;
+}
+
+.intro-text p {
+    margin: 0 0 1.6em;
+}
+
+.intro-text p:first-child {
+    text-indent: 0;
+}
+
+#section-ux .intro-text p:first-child {
+    text-indent: 2em;
+}
+
+.intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+.year-label {
+    text-align: right;
+    margin-top: 24px;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: #333;
+}
+
+/* ===== Carousel ===== */
+.intro-carousel {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-inner img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: none;
+    cursor: pointer;
+}
+
+.carousel-inner img.active {
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #e21b16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: opacity 0.2s;
+}
+
+.carousel-btn:hover {
+    opacity: 0.7;
+}
+
+.carousel-btn.prev {
+    left: -40px;
+}
+
+.carousel-btn.next {
+    right: -40px;
+}
+
+/* ===== Gallery (Graphic Design) - Masonry ===== */
+.gallery {
+    width: min(1140px, calc(100vw - 48px));
+    margin: 80px auto 0;
+}
+
+.gallery-grid {
+    position: relative;
+}
+
+.piece {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.piece img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.4s ease;
+}
+
+.piece:hover img {
+    filter: blur(6px) brightness(0.88);
+}
+
+.piece-caption {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: clamp(22px, 8%, 42px);
+    color: #e21b16;
+    font-family: "Portfolio Hiragino Sans GB", "Hiragino Sans GB", "PingFang SC", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+    z-index: 1;
+}
+
+.piece-caption span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.piece-caption.is-tight {
+    padding: clamp(18px, 7%, 32px);
+    line-height: 1.28;
+}
+
+.piece-caption.is-medium {
+    line-height: 1.32;
+}
+
+.piece-caption.is-wide {
+    padding: clamp(12px, 6%, 26px);
+    line-height: 1.24;
+}
+
+.piece-caption.is-mini {
+    padding: 8px;
+    line-height: 1.12;
+}
+
+.piece:hover .piece-caption,
+.piece:focus-within .piece-caption {
+    opacity: 1;
+}
+
+.footer-space {
+    height: 40px;
+}
+
+/* ===== Responsive Content ===== */
+@media (max-width: 1280px) {
+
+    .title-block,
+    .gallery,
+    .content-wrap {
+        width: calc(100vw - 52px);
+    }
+
+    .gallery-grid {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    .title-block {
+        margin-top: 30px;
+    }
+
+    .section-block {
+        padding-top: 32px;
+        padding-bottom: 88px;
+    }
+
+    .gallery-grid {
+        /* JS handles responsive columns */
+    }
+
+    .intro-section {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .carousel-btn.prev {
+        left: 4px;
+    }
+
+    .carousel-btn.next {
+        right: 4px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .title-block,
+    .gallery,
+    .content-wrap {
+        width: calc(100vw - 28px);
+    }
+
+    .gallery-grid {
+        /* JS handles responsive columns */
+    }
+
+    .intro-section {
+        margin-top: 32px;
+    }
+
+    .section-block {
+        padding-top: 24px;
+        padding-bottom: 72px;
+    }
+}
+
+/* ===== Lightbox ===== */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+}

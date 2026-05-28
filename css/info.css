@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: "Info Hiragino Sans GB";
-    src: url("../info/Hiragino Sans GB.ttc") format("truetype");
+    src: url("../fonts/Hiragino%20Sans%20GB.ttc") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: "Info Hiragino Sans GB";
-    src: url("../info/Hiragino Sans GB.ttc") format("truetype");
+    src: url("../fonts/Hiragino%20Sans%20GB.ttc") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -67,7 +67,7 @@ a {
 .info-page {
     position: relative;
     min-height: 100vh;
-    background: #fff url("../info/web/info-bg.jpg") center bottom / cover no-repeat;
+    background: #fff url("../info/web/info-bg.webp") center bottom / cover no-repeat;
 }
 
 .info-marquee {
@@ -400,7 +400,7 @@ a {
     left: 10px;
     width: 18px;
     height: min(100%, 365px);
-    background: url("../info/-info-03.png") center top / 18px auto no-repeat;
+    background: url("../info/-info-03.webp") center top / 18px auto no-repeat;
 }
 
 .timeline li {

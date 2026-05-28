@@ -1,5 +1,7 @@
 :root {
     --header-strip-h: 24px;
+    --practice-ref-w: 8000;
+    --practice-ref-h: 4500;
     --red: #ef201a;
     --deep-red: #c41714;
 }
@@ -81,14 +83,45 @@ main {
     font-size: 10px;
 }
 
-.practice-page .marquee-bar,
+.practice-page .marquee-bar {
+    height: calc(236 / var(--practice-ref-h) * 100vh);
+    font-size: calc(96 / var(--practice-ref-w) * 100vw);
+    line-height: calc(236 / var(--practice-ref-h) * 100vh);
+    letter-spacing: 0;
+}
+
+.practice-page .marquee-track {
+    animation-name: practice-marquee;
+}
+
+.practice-page .marquee-group {
+    flex: 0 0 auto;
+}
+
+.practice-page .marquee-item {
+    padding: 0 calc(33 / var(--practice-ref-w) * 100vw) 0 0;
+}
+
 .practice-page .marquee-star {
-    font-size: 18px;
+    flex: 0 0 auto;
+    padding: 0 calc(23 / var(--practice-ref-w) * 100vw) 0 0;
+    font-size: calc(96 / var(--practice-ref-w) * 100vw);
+    line-height: inherit;
 }
 
 @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+}
+
+@keyframes practice-marquee {
+    from {
+        transform: translate(0, calc(-11 / var(--practice-ref-h) * 100vh));
+    }
+
+    to {
+        transform: translate(-50%, calc(-11 / var(--practice-ref-h) * 100vh));
+    }
 }
 
 .hero {

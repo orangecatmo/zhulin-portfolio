@@ -68,7 +68,7 @@ main {
 .intro-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 100px;
     margin-top: 48px;
     align-items: start;
 }
